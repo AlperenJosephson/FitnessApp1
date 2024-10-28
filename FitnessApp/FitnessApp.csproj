@@ -99,6 +99,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\templatemo-training-studio.css" />
+    <Content Include="assets\fonts\flexslider-icon.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\slick.svg" />
+    <Content Include="assets\images\contact-bg.jpg" />
+    <Content Include="assets\images\cta-bg.jpg" />
+    <Content Include="assets\images\features-first-icon.png" />
+    <Content Include="assets\images\first-trainer.jpg" />
+    <Content Include="assets\images\gym-video.mp4" />
+    <Content Include="assets\images\line-dec.png" />
+    <Content Include="assets\images\schedule-bg.jpg" />
+    <Content Include="assets\images\second-trainer.jpg" />
+    <Content Include="assets\images\slide-01.jpg" />
+    <Content Include="assets\images\tabs-first-icon.png" />
+    <Content Include="assets\images\third-trainer.jpg" />
+    <Content Include="assets\images\training-image-01.jpg" />
+    <Content Include="assets\images\training-image-02.jpg" />
+    <Content Include="assets\images\training-image-03.jpg" />
+    <Content Include="assets\images\training-image-04.jpg" />
+    <Content Include="assets\js\accordions.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\imgfix.min.js" />
+    <Content Include="assets\js\jquery-2.1.0.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\mixitup.js" />
+    <Content Include="assets\js\popper.js" />
+    <Content Include="assets\js\scrollreveal.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -147,6 +178,19 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Anasayfa.Master" />
+    <Content Include="assets\fonts\Flaticon.woff" />
+    <Content Include="assets\fonts\flexslider-icon.eot" />
+    <Content Include="assets\fonts\flexslider-icon.ttf" />
+    <Content Include="assets\fonts\flexslider-icon.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\slick.eot" />
+    <Content Include="assets\fonts\slick.ttf" />
+    <Content Include="assets\fonts\slick.woff" />
+    <Content Include="AltSayfa.Master" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -179,6 +223,12 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltSayfa.Master.cs">
+      <DependentUpon>AltSayfa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AltSayfa.Master.designer.cs">
+      <DependentUpon>AltSayfa.Master</DependentUpon>
+    </Compile>
     <Compile Include="Anasayfa.Master.cs">
       <DependentUpon>Anasayfa.Master</DependentUpon>
     </Compile>

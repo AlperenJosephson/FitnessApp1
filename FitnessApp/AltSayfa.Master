@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AltSayfa.master.cs" Inherits="FitnessApp.AltSayfa" %>
+
+
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+  
