@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Anasayfa.master.cs" Inherits="FitnessApp.Anasayfa" %>
+
+
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        /* Genel Sayfa Ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sabit Menü Alanı */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* Açılır Menü İçeriği */
+        .submenu {
+            display: none; /* Başlangıçta gizli */
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background-color: #007acc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .submenu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Anasayfaya Dönme Görseli */
+        .home-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* İçerik Alanı */
+        .content {
+            padding: 80px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Makale Kartları */
+        .article {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        /* Görsel Alanı */
+        .article img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Başlık ve İçerik */
+        .article-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const submenu = document.querySelector('.submenu');
+            submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Sabit Menü Alanı -->
+    <div class="navbar" onclick="toggleMenu()">
+        Ana Menü
+    </div>
+    
+    <!-- Açılır Menü İçeriği -->
+    <div class="submenu">
+        <a href="#besin">Besin Tüketimi</a>
+        <a href="#spor">Spor Planları</a>
+        <a href="#program">Antrenman Programları</a>
+    </div>
+
+    <!-- Anasayfaya Dönme Görseli -->
+    <a href="#top">
+        <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-icon">
+    </a>
+
+    <!-- İçerik Alanı -->
+    <div class="content" id="top">
+        <!-- Makale Kartları -->
+
+        <div class="article" id="besin">
+            <img src="https://via.placeholder.com/300x150" alt="Besin Tüketimi">
+            <div class="article-content">
+                <h2 class="article-title">Besin Tüketimi ve Sağlıklı Diyetler</h2>
+            </div>
+        </div>
+        <div class="article" id="spor">
+            <img src="https://via.placeholder.com/300x150" alt="Spor Planları">
+            <div class="article-content">
+                <h2 class="article-title">Spor Planları ve Egzersiz Rutinleri</h2>
+            </div>
+        </div>
+        <div class="article" id="program">
+            <img src="https://via.placeholder.com/300x150" alt="Antrenman Programları">
+            <div class="article-content">
+                <h2 class="article-title">Haftalık Antrenman Programları</h2>
+            </div>
+        </div>
+
+        <div class="article" id="besin2">
+            <img src="https://via.placeholder.com/300x150" alt="Besin Tüketimi2">
+            <div class="article-content">
+                <h2 class="article-title">Besin Tüketimi ve Sağlıklı Diyetler2</h2>
+            </div>
+        </div>
+        <div class="article" id="spor2">
+            <img src="https://via.placeholder.com/300x150" alt="Spor Planları2">
+            <div class="article-content">
+                <h2 class="article-title">Spor Planları ve Egzersiz Rutinleri2</h2>
+            </div>
+        </div>
+        <div class="article" id="program2">
+            <img src="https://via.placeholder.com/300x150" alt="Antrenman Programları2">
+            <div class="article-content">
+                <h2 class="article-title">Haftalık Antrenman Programları2</h2>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
