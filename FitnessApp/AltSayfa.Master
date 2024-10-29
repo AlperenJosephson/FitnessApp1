@@ -15,7 +15,8 @@
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+       
+        <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
 
 		<!-- CSS here -->
@@ -121,7 +122,7 @@
         <!-- Favourite Places Start -->
         <div class="favourite-place place-padding">
             <div class="container">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
 
                 <!-- Section Tittle -->
                 <div class="row">
@@ -360,6 +361,8 @@
  
     </footer>
 
+         
+    
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->
@@ -381,6 +384,9 @@
         <script src="./assets/js2/jquery.magnific-popup.js"></script>
 
 		<!-- Scrollup, nice-select, sticky -->
+
+   
+
         <script src="./assets/js2/jquery.scrollUp.min.js"></script>
         <script src="./assets/js2/jquery.nice-select.min.js"></script>
 		<script src="./assets/js2/jquery.sticky.js"></script>
@@ -395,6 +401,9 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js2/plugins.js"></script>
         <script src="./assets/js2/main.js"></script>
-        
+       
+
+
+
     </body>
 </html>
