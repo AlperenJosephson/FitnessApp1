@@ -19,12 +19,13 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
+    
     <title>FitKal</title>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     
-      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
     </asp:ContentPlaceHolder>
 
 
@@ -63,9 +64,20 @@
                         <!-- ***** Menu Start ***** -->
 
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Egzersizler</a></li>                         
+                            <li class="scroll-to-section"><a href="#top" class="active">Ana Sayfa</a></li>        
+                            <li><a href="Egzersizler.aspx">Egzersizler</a></li>
+                            <li><a href="Beslenme Desteği.aspx">Beslenme Desteği</a></li>
+                            <li><a href="Sağlık Takibi.aspx">Sağlık Takibi</a></li>
+                            <li><a href="Favoriler.aspx">Favoriler</a></li>
+                            <li><a href="Kalori Hesabı.aspx">Kalori Hesabı</a></li>
+                             
+                            <!-- <li class="scroll-to-section"><a href="#our-classes">Egzersizler</a></li>   
+                            <li class="scroll-to-section"><a href="#our-classes">Beslenme Desteği</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">Sağlık Takibi</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">Favoriler</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">Kalori Hesabı</a></li>
                             <li class="main-button"><a href="#">Sign Up</a></li>
+                                -->
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
