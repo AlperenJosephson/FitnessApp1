@@ -77,9 +77,10 @@
 						</a>
 					</div>
 
-					<p><asp:Label ID="Label1" runat="server"  Text=""></asp:Label></p>
-
 					<div class="text-center p-t-136">
+
+					<p style="align-content:center;"><asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label></p>
+                        
 						<a class="txt2" href="#">
 							Yeni Hesap Oluştur
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
