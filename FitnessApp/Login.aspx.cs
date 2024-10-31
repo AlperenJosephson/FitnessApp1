@@ -12,7 +12,6 @@ namespace FitnessApp
 {
     public partial class Login : System.Web.UI.Page
     {
-        //string conf_baglanti = WebConfigurationManager.ConnectionStrings["Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Deneme_Login;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
 

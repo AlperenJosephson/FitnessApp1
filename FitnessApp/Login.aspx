@@ -81,7 +81,7 @@
 
 					<p style="align-content:center;"><asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label></p>
                         
-						<a class="txt2" href="#">
+						<a class="txt2" href="Register.aspx">
 							Yeni Hesap Oluştur
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
