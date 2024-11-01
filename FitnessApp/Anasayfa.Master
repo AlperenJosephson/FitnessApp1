@@ -7,6 +7,8 @@
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 </asp:ContentPlaceHolder>
 
+<!-- Deneme için yazıldı-->
+
 
 <!DOCTYPE html>
 <html lang="tr">
