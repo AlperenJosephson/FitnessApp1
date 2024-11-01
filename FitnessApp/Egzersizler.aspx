@@ -45,7 +45,3 @@
         </div>
     </div>
 </asp:Content>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-</asp:Content>
