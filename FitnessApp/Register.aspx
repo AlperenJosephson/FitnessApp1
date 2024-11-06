@@ -61,7 +61,9 @@
                         <asp:Button ID="btnRegister" runat="server" CssClass="login100-form-btn" Text="Kayıt Ol" OnClick="btnRegister_Click" />
 					</div>
 
-					<p style="align-content:center;"><asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label></p>
+					<p style="align-content:center; margin-top:30px;"><asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label></p>
+					<p style="align-content:center; margin-top:30px;"><asp:Label ID="Label2" runat="server" ForeColor="Black"></asp:Label></p>
+					<p style="align-content:center; margin-top:50px;"><asp:Label ID="Label3" runat="server" ForeColor="Black"></asp:Label></p>
 
 					<div class="text-center p-t-136">
 						<a class="txt2" href="Login.aspx">

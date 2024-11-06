@@ -46,7 +46,10 @@ namespace FitnessApp
                 if (sonuc > 0)
                 {
                     // Kayıt başarılı, kullanıcıyı giriş sayfasına yönlendir
-                    Response.Redirect("Login.aspx");
+                    //Response.Redirect("Login.aspx");
+                    Label2.Text = "Kayıt işlemi başarılı";
+                    Label3.Text = "Giriş yapabilirsiniz";
+
                 }
                 else
                 {
