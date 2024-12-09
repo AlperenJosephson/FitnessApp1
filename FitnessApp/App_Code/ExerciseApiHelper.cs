@@ -1,33 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using FitnessApp;
+using System.Net;
 using Newtonsoft.Json;
+using FitnessApp;
 
-namespace FitnessApp
-{
-    public partial class Egzersizler : System.Web.UI.Page
-    {
 
-        protected List<Exercise> ExercisesList {  get; set; }    // egzersiz listesini tutacak
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                ExerciseApiHelper apiHelper = new ExerciseApiHelper(); // API yardımıcı sınıfını oluştur
-                ExercisesList = apiHelper.GetExercises(); // Egzersizleri al
-                ExercisesRepeater.DataSource = ExercisesList; // Repeater kontrolüne bağla
-                ExercisesRepeater.DataBind(); // Veriyi bağla
-            }
-
-        }
-    }
-
-    // Yardımcı Sınıf
+/*namespace FitnessApp.Helpers
+{*/
     public class ExerciseApiHelper
     {
         private const string ApiUrl = "https://api.api-ninjas.com/v1/exercises?muscle=biceps";
@@ -43,7 +24,6 @@ namespace FitnessApp
         }
     }
 
-    // Model Sınıf
     public class Exercise
     {
         public string Name { get; set; } // "name" alanı
@@ -53,7 +33,4 @@ namespace FitnessApp
         public string Difficulty { get; set; } // "difficulty" alanı
         public string Instructions { get; set; } // "instructions" alanı
     }
-
-
-
-}
+//}

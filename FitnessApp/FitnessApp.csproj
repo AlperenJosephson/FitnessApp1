@@ -800,6 +800,7 @@
     <Compile Include="Anasayfa.Master.designer.cs">
       <DependentUpon>Anasayfa.Master</DependentUpon>
     </Compile>
+    <Content Include="App_Code\ExerciseApiHelper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Beslenme Desteği.aspx.cs">

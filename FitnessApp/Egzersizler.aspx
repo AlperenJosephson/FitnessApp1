@@ -14,11 +14,39 @@
         <div class="row">
         <div class="col-lg-12">
             <div class="section-tittle text-center">
-                <span>FEATURED TOURS Packages</span>
-                <h2>Favourite Places</h2>
+                <!-- <span>FEATURED TOURS Packages</span> -->
+                <h2>EGZERSİZLER</h2>
             </div>
         </div>
     </div>
+
+    <asp:Repeater ID="ExercisesRepeater" runat="server">
+    <ItemTemplate>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single-place mb-30">
+                    <div class="place-img">
+                        <img src="assets/img2/service/services1.jpg" alt=""> <!-- Varsayılan görsel -->
+                    </div>
+                    <div class="place-cap">
+                        <div class="place-cap-top">
+                            <h3><a href="#">Egzersiz Adı: <%# Eval("Name") %></a></h3>
+                            <p>Egzersiz Türü: <%# Eval("Type") %></p>
+                            <p>Kullanılan Kas: <%# Eval("Muscle") %></p>
+                            <p>Ekipman: <%# Eval("Equipment") %></p>
+                            <p>Zorluk: <%# Eval("Difficulty") %></p>
+                        </div>
+                        <div class="place-cap-bottom">
+                            <p>Talimatlar:</p>
+                            <p><%# Eval("Instructions") %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ItemTemplate>
+</asp:Repeater>
+
     <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="single-place mb-30">
@@ -42,3 +70,6 @@
         </div>
     </div>
 </asp:Content>
+
+
+
