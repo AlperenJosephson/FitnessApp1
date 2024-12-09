@@ -1,0 +1,13 @@
+Egzersiz alanında yapılabilecekler:
+Api her girilen kas grubundan 5 egzersiz öneriyor. Çeşitliliği artırmak için default olarak 
+biceps ve chest olacak şekilde bunların 5 er örneğini koyarım. Bunlar ilk gösterim için yeterli olur
+
+Eklenebilecekler :
+Arama alanında apide var olan kas grupları yer alır ve istenilen kas grubunun değerleri gösterilebilir.
+
+
+Sağlık Takibi ekranı için Bilgiler girilir ve bu ekran vücut kütle indeksi grafiği yer alır
+Aynı zamanda bu verilerin bir depolama alanı olur ve bu veriler kullanılarak bir grafik de oluşturulabilir.
+
+
+

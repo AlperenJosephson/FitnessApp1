@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\200w.gif" />
     <Content Include="assets\css2\animate.min.css" />
     <Content Include="assets\css2\bootstrap.min.css" />
     <Content Include="assets\css2\flaticon.css" />
@@ -553,6 +554,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\custom_exercise.css" />
     <Content Include="Default.aspx" />
     <Content Include="Egzersizler.aspx" />
     <Content Include="favicon.ico" />

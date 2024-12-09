@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AltSayfa.Master" AutoEventWireup="true" CodeBehind="Egzersizler.aspx.cs" Inherits="FitnessApp.Egzersizler" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,7 +13,7 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
-        <div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <div class="section-tittle text-center">
                 <!-- <span>FEATURED TOURS Packages</span> -->
@@ -19,34 +21,29 @@
             </div>
         </div>
     </div>
-
-    <asp:Repeater ID="ExercisesRepeater" runat="server">
-    <ItemTemplate>
+    
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-place mb-30">
-                    <div class="place-img">
-                        <img src="assets/img2/service/services1.jpg" alt=""> <!-- Varsayılan görsel -->
-                    </div>
-                    <div class="place-cap">
-                        <div class="place-cap-top">
-                            <h3><a href="#">Egzersiz Adı: <%# Eval("Name") %></a></h3>
-                            <p>Egzersiz Türü: <%# Eval("Type") %></p>
-                            <p>Kullanılan Kas: <%# Eval("Muscle") %></p>
-                            <p>Ekipman: <%# Eval("Equipment") %></p>
-                            <p>Zorluk: <%# Eval("Difficulty") %></p>
-                        </div>
-                        <div class="place-cap-bottom">
-                            <p>Talimatlar:</p>
-                            <p><%# Eval("Instructions") %></p>
+            <asp:Repeater ID="ExercisesRepeater" runat="server">
+                <ItemTemplate>
+                    <div class="col-md-4"> <!-- Ekranı üç sütuna böler -->
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="assets/200w.gif" alt="Egzersiz Görseli">
+                            <div class="card-body">
+                                <h5 class="card-title"><%# Eval("Name") %></h5>
+                                <p class="card-text">Tür: <%# Eval("Type") %></p>
+                                <p class="card-text">Kas Grubu: <%# Eval("Muscle") %></p>
+                                <p class="card-text">Ekipman: <%# Eval("Equipment") %></p>
+                                <p class="card-text">Zorluk: <%# Eval("Difficulty") %></p>
+                                <!-- <p class="card-text">Talimatlar: <%# Eval("Instructions") %></p> -->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
-    </ItemTemplate>
-</asp:Repeater>
-
+    </div>
+    <!--
     <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="single-place mb-30">
@@ -69,6 +66,7 @@
             </div>
         </div>
     </div>
+    -->
 </asp:Content>
 
 
