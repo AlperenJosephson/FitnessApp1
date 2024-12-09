@@ -1,0 +1,45 @@
+﻿/* body {} */
+/* Yazıların listelendiği sayfa için stil */
+.articles-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.article-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+    .article-item h3 {
+        font-size: 20px;
+        color: #333;
+    }
+
+        .article-item h3 a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            .article-item h3 a:hover {
+                text-decoration: underline;
+            }
+
+/* Detay sayfası için stil */
+.article-detail {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+    .article-detail h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .article-detail p {
+        font-size: 16px;
+        color: #555;
+    }

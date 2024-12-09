@@ -541,6 +541,7 @@
     <Content Include="assets\js\popper.js" />
     <Content Include="assets\js\scrollreveal.min.js" />
     <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="BeslenmeDestegiDetay.aspx" />
     <Content Include="Beslenme Desteği.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -559,6 +560,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\custom_exercise.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="Default.aspx" />
     <Content Include="Egzersizler.aspx" />
     <Content Include="favicon.ico" />
@@ -809,6 +811,13 @@
     <Content Include="App_Code\ExerciseApiHelper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BeslenmeDestegiDetay.aspx.cs">
+      <DependentUpon>BeslenmeDestegiDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeslenmeDestegiDetay.aspx.designer.cs">
+      <DependentUpon>BeslenmeDestegiDetay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Beslenme Desteği.aspx.cs">
       <DependentUpon>Beslenme Desteği.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

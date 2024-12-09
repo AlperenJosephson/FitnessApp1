@@ -11,16 +11,25 @@ namespace FitnessApp
 {
 
 
-    public partial class Beslenme_Desteği
+    public partial class BeslenmeDestegiDetay
     {
 
         /// <summary>
-        /// ArticlesRepeater control.
+        /// articleTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ArticlesRepeater;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl articleTitle;
+
+        /// <summary>
+        /// articleContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl articleContent;
     }
 }
