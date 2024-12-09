@@ -19,21 +19,33 @@ namespace FitnessApp
             if (!IsPostBack)
             {
                 ExerciseApiHelper apiHelper = new ExerciseApiHelper(); // API yardımıcı sınıfını oluştur
-                ExercisesList = apiHelper.GetExercises(); // Egzersizleri al
+
+                List<Exercise> bicepsExercises = apiHelper.GetExercises("biceps");
+                List<Exercise> chestExercises = apiHelper.GetExercises("chest");
+
+                ExercisesList = new List<Exercise>();
+                ExercisesList.AddRange(bicepsExercises);
+                ExercisesList.AddRange(chestExercises);
+
+                //ExercisesList = apiHelper.GetExercises("biceps"); // Egzersizleri al
+
                 ExercisesRepeater.DataSource = ExercisesList; // Repeater kontrolüne bağla
                 ExercisesRepeater.DataBind(); // Veriyi bağla
-            }
 
+                //ExercisesList = apiHelper.GetExercises("chest"); // Egzersizleri al
+
+            }
         }
     }
 
     // Yardımcı Sınıf
     public class ExerciseApiHelper
     {
-        private const string ApiUrl = "https://api.api-ninjas.com/v1/exercises?muscle=biceps";
+        private const string ApiBaseUrl = "https://api.api-ninjas.com/v1/exercises?muscle=";
         private const string ApiKey = "dqOSOqDyEDvX/mjtOSnamw==9CWVoGJdRSiPYYDm";
-        public List<Exercise> GetExercises()    // apiden json verisini çeker
+        public List<Exercise> GetExercises(string muscleGroup)    // apiden json verisini çeker
         {
+            string ApiUrl = ApiBaseUrl + muscleGroup; // Dinamik URL
             using (WebClient client = new WebClient())
             {
                 client.Headers.Add("X-Api-Key", ApiKey); // Gerekli kimlik doğrulama

@@ -28,7 +28,7 @@
                 <ItemTemplate>
                     <div class="col-md-4"> <!-- Ekranı üç sütuna böler -->
                         <div class="card mb-4">
-                            <img class="card-img-top" src="assets/200w.gif" alt="Egzersiz Görseli">
+                            <img class="card-img-top" src='<%#"assets/images/" + Eval("Name").ToString().ToLower().Replace(" ","-") +".gif"%>' alt="Egzersiz Görseli">
                             <div class="card-body">
                                 <h5 class="card-title"><%# Eval("Name") %></h5>
                                 <p class="card-text">Tür: <%# Eval("Type") %></p>

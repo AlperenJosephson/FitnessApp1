@@ -368,8 +368,12 @@
     <Content Include="assets\fonts\flexslider-icon.svg" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\slick.svg" />
+    <Content Include="assets\images\barbellcurl.gif" />
+    <Content Include="assets\images\bicepscurltoshoulderpress.gif" />
+    <Content Include="assets\images\Concentration curl.gif" />
     <Content Include="assets\images\contact-bg.jpg" />
     <Content Include="assets\images\cta-bg.jpg" />
+    <Content Include="assets\images\EZ-Bar Curl.gif" />
     <Content Include="assets\images\features-first-icon.png" />
     <Content Include="assets\images\first-trainer.jpg" />
     <Content Include="assets\images\gym-video.mp4" />
@@ -875,6 +879,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\images\exercises\" />
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
