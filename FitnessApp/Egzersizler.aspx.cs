@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,7 +13,6 @@ namespace FitnessApp
 {
     public partial class Egzersizler : System.Web.UI.Page
     {
-
         protected List<Exercise> ExercisesList {  get; set; }    // egzersiz listesini tutacak
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +20,7 @@ namespace FitnessApp
             {
                 ExerciseApiHelper apiHelper = new ExerciseApiHelper(); // API yardımıcı sınıfını oluştur
 
+                /*
                 List<Exercise> bicepsExercises = apiHelper.GetExercises("biceps");
                 List<Exercise> chestExercises = apiHelper.GetExercises("chest");
 
@@ -27,14 +28,154 @@ namespace FitnessApp
                 ExercisesList.AddRange(bicepsExercises);
                 ExercisesList.AddRange(chestExercises);
 
+                Session["ExerciseList"] = ExercisesList;
+
                 //ExercisesList = apiHelper.GetExercises("biceps"); // Egzersizleri al
 
                 ExercisesRepeater.DataSource = ExercisesList; // Repeater kontrolüne bağla
                 ExercisesRepeater.DataBind(); // Veriyi bağla
 
                 //ExercisesList = apiHelper.GetExercises("chest"); // Egzersizleri al
+                */
+                try
+                {
+                    // İlgili egzersizleri al
+                    List<Exercise> bicepsExercises = apiHelper.GetExercises("biceps");
+                    List<Exercise> chestExercises = apiHelper.GetExercises("chest");
+
+                    ExercisesList = new List<Exercise>();
+                    ExercisesList.AddRange(bicepsExercises);
+                    ExercisesList.AddRange(chestExercises);
+
+                    // Egzersiz listesi dolu mu kontrol edin
+                    if (ExercisesList == null || ExercisesList.Count == 0)
+                    {
+                        throw new Exception("Egzersiz listesi boş.");
+                    }
+
+                    // Egzersiz listesini session'a kaydedin
+                    Session["ExercisesList"] = ExercisesList;
+
+                    // Repeater kontrolüne bağlayın
+                    ExercisesRepeater.DataSource = ExercisesList;
+                    ExercisesRepeater.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Hata: " + ex.Message + "');</script>");
+                }
+
 
             }
+            else {
+                ExercisesList = Session["ExercisesList"] as List<Exercise>;
+            }
+        }
+
+        /*
+        protected void AddToFavorites(object sender, CommandEventArgs e)
+        {
+            string exerciseName = e.CommandArgument.ToString(); // Egzersiz adı
+            string userMail = Session["Kullanici"]?.ToString(); // Kullanıcı oturumu
+
+            if (string.IsNullOrEmpty(userMail))
+            {
+                Response.Redirect("Login.aspx"); // Oturum yoksa giriş sayfasına yönlendir
+                return;
+            }
+
+            string exerciseId = e.CommandArgument.ToString();
+
+            // Favorileri veritabanına ekle
+            string connectionString = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Deneme_Login;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //string query = "INSERT INTO Favorites (Mail, ExerciseId) VALUES (@Mail, @ExerciseId)";
+                
+                string query = @" IF NOT EXISTS (SELECT 1 FROM Favoriler WHERE Mail = @Mail AND ExerciseName = @ExerciseName)
+            BEGIN
+                INSERT INTO Favoriler (Mail, ExerciseName, Type, Muscle, Equipment, Difficulty)
+                VALUES (@Mail, @ExerciseName, @Type, @Muscle, @Equipment, @Difficulty)END";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Mail", userMail);
+                command.Parameters.AddWithValue("@ExerciseId", exerciseName);
+
+                var exercise = ExercisesList.FirstOrDefault(x => x.Name == exerciseName);
+                command.Parameters.AddWithValue("@Type", exercise?.Type ?? "Unknown");
+                command.Parameters.AddWithValue("@Muscle", exercise?.Muscle ?? "Unknown");
+                command.Parameters.AddWithValue("@Equipment", exercise?.Equipment ?? "Unknown");
+                command.Parameters.AddWithValue("@Difficulty", exercise?.Difficulty ?? "Unknown");
+
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            Response.Write("<script>alert('Egzersiz favorilere eklendi.');</script>");
+        }*/
+
+        protected void AddToFavorites(object sender, CommandEventArgs e)
+        {
+            // Kullanıcının seçtiği egzersizin adını al
+            string exerciseName = e.CommandArgument.ToString();
+
+            // Egzersiz listesini Session'dan alın
+            if (ExercisesList == null)
+            {
+                ExercisesList = Session["ExercisesList"] as List<Exercise>;
+                if (ExercisesList == null) // Liste hala boşsa hata mesajı ver
+                {
+                    Response.Write("<script>alert('Egzersiz listesi boş. Lütfen sayfayı yenileyin.');</script>");
+                    return;
+                }
+            }
+
+            // Egzersiz listesinden seçilen egzersizi bulun
+            var exercise = ExercisesList.FirstOrDefault(x => x.Name == exerciseName);
+
+            if (exercise == null) // Seçilen egzersiz listede yoksa hata mesajı ver
+            {
+                Response.Write("<script>alert('Egzersiz bulunamadı.');</script>");
+                return;
+            }
+
+            // Kullanıcı oturumu alın
+            string userMail = Session["Kullanici"]?.ToString();
+            if (string.IsNullOrEmpty(userMail))
+            {
+                Response.Redirect("Login.aspx"); // Giriş yapılmamışsa login sayfasına yönlendir
+                return;
+            }
+
+            // Favorilere ekleme işlemi
+            string connectionString = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Deneme_Login;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query1 = @"
+            IF NOT EXISTS (SELECT 1 FROM Favoriler WHERE Mail = @Mail AND ExerciseName = @ExerciseName)
+            BEGIN
+                INSERT INTO Favoriler (Mail, ExerciseName, Type, Muscle, Equipment, Difficulty)
+                VALUES (@Mail, @ExerciseName, @Type, @Muscle, @Equipment, @Difficulty)
+            END";
+                string query = @"INSERT INTO Favoriler (Mail, ExerciseName, Type, Muscle, Equipment, Difficulty)
+                             VALUES (@Mail, @ExerciseName, @Type, @Muscle, @Equipment, @Difficulty)";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Mail", userMail);
+                command.Parameters.AddWithValue("@ExerciseName", exercise.Name);
+                command.Parameters.AddWithValue("@Type", exercise.Type ?? "Unknown");
+                command.Parameters.AddWithValue("@Muscle", exercise.Muscle ?? "Unknown");
+                command.Parameters.AddWithValue("@Equipment", exercise.Equipment ?? "Unknown");
+                command.Parameters.AddWithValue("@Difficulty", exercise.Difficulty ?? "Unknown");
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            Response.Write("<script>alert('Egzersiz favorilere eklendi.');</script>");
         }
     }
 
@@ -65,7 +206,4 @@ namespace FitnessApp
         public string Difficulty { get; set; } // "difficulty" alanı
         public string Instructions { get; set; } // "instructions" alanı
     }
-
-
-
 }

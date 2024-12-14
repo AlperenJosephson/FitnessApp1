@@ -28,7 +28,7 @@
                 <ItemTemplate>
                     <div class="col-md-4"> <!-- Ekranı üç sütuna böler -->
                         <div class="card mb-4">
-                            <img class="card-img-top" src='<%#"assets/images/" + Eval("Name").ToString().ToLower().Replace(" ","-") +".gif"%>' alt="Egzersiz Görseli">
+                            <img class="card-img-top" src='<%#"assets/images/" + Eval("Name").ToString().Trim().ToLower().Replace(" ","-") +".gif"%>' alt="Egzersiz Görseli">
                             <div class="card-body">
                                 <h5 class="card-title"><%# Eval("Name") %></h5>
                                 <p class="card-text">Tür: <%# Eval("Type") %></p>
@@ -36,6 +36,8 @@
                                 <p class="card-text">Ekipman: <%# Eval("Equipment") %></p>
                                 <p class="card-text">Zorluk: <%# Eval("Difficulty") %></p>
                                 <!-- <p class="card-text">Talimatlar: <%# Eval("Instructions") %></p> -->
+                                <asp:Button ID="AddToFavoritesButton" runat="server" Text="Favorilere Ekle"
+                                 CommandArgument ='<%# Eval("Name") %>' OnCommand="AddToFavorites" CssClass="btn btn-primary" />
                             </div>
                         </div>
                     </div>
@@ -43,30 +45,7 @@
             </asp:Repeater>
         </div>
     </div>
-    <!--
-    <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-6">
-            <div class="single-place mb-30">
-                <div class="place-img">
-                    <img src="assets/img2/service/services1.jpg" alt="">
-                </div>
-                <div class="place-cap">
-                    <div class="place-cap-top">
-                        <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
-                        <h3><a href="#">The Dark Forest Adventure</a></h3>
-                        <p class="dolor">$1870 <span>/ Per Person</span></p>
-                    </div>
-                    <div class="place-cap-bottom">
-                        <ul>
-                            <li><i class="far fa-clock"></i>3 Days</li>
-                            <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
+    
 </asp:Content>
 
 
