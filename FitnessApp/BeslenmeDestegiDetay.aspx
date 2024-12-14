@@ -37,6 +37,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="article-detail">
+        <asp:Image ID="articleImage" runat="server" style ="width: 500px; height: auto; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" CssClass ="article-image" />
         <h2 id="articleTitle" runat="server"></h2> <!-- Başlık için -->
         <p id="articleContent" runat="server"></p> <!-- İçerik için -->
     </div>

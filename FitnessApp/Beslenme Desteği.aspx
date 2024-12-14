@@ -42,7 +42,9 @@
         <asp:Repeater ID="ArticlesRepeater" runat="server">
             <ItemTemplate>
                 <div class="article-item">
-                    <h3>
+                    <img src='<%# Eval("ImageURL") %>' alt='<%# Eval("Title") %>' style="width: 500px; height: auto; display: block; margin: 10px auto; border-radius: 8px;" />
+
+                    <h3 style ="text-align: center;">
                         <a href="BeslenmeDestegiDetay.aspx?id=<%# Eval("Id") %>">
                             <%# Eval("Title") %>
                         </a>
