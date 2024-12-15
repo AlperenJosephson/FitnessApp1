@@ -40,29 +40,29 @@
         <h4>Sağlık Verileriniz</h4>
         <asp:Repeater ID="RepeaterSaglikTakibi" runat="server">
             <HeaderTemplate>
-                <table class="table table-bordered">
+                <table class="table table-striped">
                     <tr>
-                        <th>Tarih</th>
-                        <th>Kilo (kg)</th>
-                        <th>Boy (cm)</th>
-                        <th>Adım Sayısı</th>
-                        <th>Egzersiz Adı</th>
-                        <th>Süre (dk)</th>
+                        <th>Tarih</th><th>Kilo</th><th>Boy</th><th>Adım Sayısı</th><th>Egzersiz Adı</th><th>Egzersiz Süresi</th><th>VKE</th>
                     </tr>
             </HeaderTemplate>
-            <ItemTemplate>
-                <tr>
-                    <td><%# Eval("Tarih") %></td>
-                    <td><%# Eval("Kilo") %></td>
-                    <td><%# Eval("Boy") %></td>
-                    <td><%# Eval("AdimSayisi") %></td>
-                    <td><%# Eval("EgzersizAdi") %></td>
-                    <td><%# Eval("EgzersizSuresi") %></td>
-                </tr>
-            </ItemTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("Tarih") %></td>
+                        <td><%# Eval("Kilo") %> kg</td>
+                        <td><%# Eval("Boy") %> cm</td>
+                        <td><%# Eval("AdimSayisi") %></td>
+                        <td><%# Eval("EgzersizAdi") %></td>
+                        <td><%# Eval("EgzersizSuresi") %> dk</td>
+                        <td><%# Eval("VKE") %></td>
+                    </tr>
+                </ItemTemplate>
             <FooterTemplate>
                 </table>
             </FooterTemplate>
         </asp:Repeater>
+        
+        <asp:Label ID="lblGeriBildirim" runat="server" CssClass="alert alert-info" Visible="false"></asp:Label>
+
+
     </div>
 </asp:Content>
