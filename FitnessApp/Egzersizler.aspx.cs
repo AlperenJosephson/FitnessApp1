@@ -72,49 +72,6 @@ namespace FitnessApp
             }
         }
 
-        /*
-        protected void AddToFavorites(object sender, CommandEventArgs e)
-        {
-            string exerciseName = e.CommandArgument.ToString(); // Egzersiz adı
-            string userMail = Session["Kullanici"]?.ToString(); // Kullanıcı oturumu
-
-            if (string.IsNullOrEmpty(userMail))
-            {
-                Response.Redirect("Login.aspx"); // Oturum yoksa giriş sayfasına yönlendir
-                return;
-            }
-
-            string exerciseId = e.CommandArgument.ToString();
-
-            // Favorileri veritabanına ekle
-            string connectionString = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Deneme_Login;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                //string query = "INSERT INTO Favorites (Mail, ExerciseId) VALUES (@Mail, @ExerciseId)";
-                
-                string query = @" IF NOT EXISTS (SELECT 1 FROM Favoriler WHERE Mail = @Mail AND ExerciseName = @ExerciseName)
-            BEGIN
-                INSERT INTO Favoriler (Mail, ExerciseName, Type, Muscle, Equipment, Difficulty)
-                VALUES (@Mail, @ExerciseName, @Type, @Muscle, @Equipment, @Difficulty)END";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Mail", userMail);
-                command.Parameters.AddWithValue("@ExerciseId", exerciseName);
-
-                var exercise = ExercisesList.FirstOrDefault(x => x.Name == exerciseName);
-                command.Parameters.AddWithValue("@Type", exercise?.Type ?? "Unknown");
-                command.Parameters.AddWithValue("@Muscle", exercise?.Muscle ?? "Unknown");
-                command.Parameters.AddWithValue("@Equipment", exercise?.Equipment ?? "Unknown");
-                command.Parameters.AddWithValue("@Difficulty", exercise?.Difficulty ?? "Unknown");
-
-
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-
-            Response.Write("<script>alert('Egzersiz favorilere eklendi.');</script>");
-        }*/
 
         protected void AddToFavorites(object sender, CommandEventArgs e)
         {

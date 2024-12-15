@@ -15,6 +15,26 @@ namespace FitnessApp
             SqlConnection baglanti = new SqlConnection("Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Deneme_Login;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             baglanti.Open();
 
+            if (!IsPostBack)
+            {
+                if (Session["KullaniciAdi"] != null) // Kullanıcı giriş yapmışsa
+                {
+                    lblKullaniciAdi.InnerText = "Hoşgeldin, " + Session["KullaniciAdi"].ToString(); // İsmi göster
+                    //btnGirisYap.Visible = false; // Giriş yap butonunu gizle
+                }
+                else
+                {
+                    lblKullaniciAdi.InnerText = ""; // Boş bırak
+                    //btnGirisYap.Visible = true; // Butonu göster
+                }
+            }
+
         }
+
+        protected void btnGirisYap_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
+
     }
 }
