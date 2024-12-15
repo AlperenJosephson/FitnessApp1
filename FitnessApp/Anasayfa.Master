@@ -75,15 +75,6 @@
                                 <a href="Login.aspx" class="btn btn-danger">GİRİŞ YAP</a>
                             </li>
 
-                             
-                            <!-- <li class="scroll-to-section"><a href="#our-classes">Egzersizler</a></li>   
-                            <li class="scroll-to-section"><a href="#our-classes">Beslenme Desteği</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Sağlık Takibi</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Favoriler</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Kalori Hesabı</a></li>
-                            <li class="main-button"><a href="#">Sign Up</a></li>
-                            -->
-
                             <!-- Kullanıcı adı göstermek için -->
                             <li><span id="lblKullaniciAdi" runat="server" style="color: white; font-weight: bold;"></span></li>
 
@@ -117,7 +108,7 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Features Item Start ***** -->
+    <!-- ***** Features Item Start ***** 
     <section class="section" id="features">
         <div class="container">
             <div class="row">
@@ -198,10 +189,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- ***** Features Item End ***** -->
 
-    <!-- ***** Our Classes Start ***** -->
+    <!-- ***** Our Classes Start ***** 
     <section class="section" id="our-classes">
         <div class="container">
             <div class="row">
@@ -261,7 +252,7 @@
               </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- ***** Our Classes End ***** -->   
     
     <!-- ***** Footer Start ***** -->
