@@ -79,8 +79,7 @@ namespace FitnessApp
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    /*string query = @"INSERT INTO SaglikTakibi (Mail, Tarih, Kilo, Boy, AdimSayisi, EgzersizAdi, EgzersizSuresi) 
-                                     VALUES (@Mail, @Tarih, @Kilo, @Boy, @AdimSayisi, @EgzersizAdi, @EgzersizSuresi)";*/
+
                     string query = @"INSERT INTO SaglikTakibi (Mail, Tarih, Kilo, Boy, AdimSayisi, EgzersizAdi, EgzersizSuresi, VucutKitleEndeksi) 
                                          VALUES (@Mail, @Tarih, @Kilo, @Boy, @AdimSayisi, @EgzersizAdi, @EgzersizSuresi, @VKE)";
 

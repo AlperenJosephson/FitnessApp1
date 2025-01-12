@@ -20,23 +20,6 @@ namespace FitnessApp
             {
                 ExerciseApiHelper apiHelper = new ExerciseApiHelper(); // API yardımıcı sınıfını oluştur
 
-                /*
-                List<Exercise> bicepsExercises = apiHelper.GetExercises("biceps");
-                List<Exercise> chestExercises = apiHelper.GetExercises("chest");
-
-                ExercisesList = new List<Exercise>();
-                ExercisesList.AddRange(bicepsExercises);
-                ExercisesList.AddRange(chestExercises);
-
-                Session["ExerciseList"] = ExercisesList;
-
-                //ExercisesList = apiHelper.GetExercises("biceps"); // Egzersizleri al
-
-                ExercisesRepeater.DataSource = ExercisesList; // Repeater kontrolüne bağla
-                ExercisesRepeater.DataBind(); // Veriyi bağla
-
-                //ExercisesList = apiHelper.GetExercises("chest"); // Egzersizleri al
-                */
                 try
                 {
                     // İlgili egzersizleri al
@@ -53,10 +36,10 @@ namespace FitnessApp
                         throw new Exception("Egzersiz listesi boş.");
                     }
 
-                    // Egzersiz listesini session'a kaydedin
+                    // Egzersiz listesini session'a kaydetme
                     Session["ExercisesList"] = ExercisesList;
 
-                    // Repeater kontrolüne bağlayın
+                    // Repeater kontrolüne bağlama
                     ExercisesRepeater.DataSource = ExercisesList;
                     ExercisesRepeater.DataBind();
                 }
@@ -64,14 +47,11 @@ namespace FitnessApp
                 {
                     Response.Write("<script>alert('Hata: " + ex.Message + "');</script>");
                 }
-
-
             }
             else {
                 ExercisesList = Session["ExercisesList"] as List<Exercise>;
             }
         }
-
 
         protected void AddToFavorites(object sender, CommandEventArgs e)
         {
@@ -82,7 +62,7 @@ namespace FitnessApp
             if (ExercisesList == null)
             {
                 ExercisesList = Session["ExercisesList"] as List<Exercise>;
-                if (ExercisesList == null) // Liste hala boşsa hata mesajı ver
+                if (ExercisesList == null)
                 {
                     Response.Write("<script>alert('Egzersiz listesi boş. Lütfen sayfayı yenileyin.');</script>");
                     return;
@@ -92,7 +72,7 @@ namespace FitnessApp
             // Egzersiz listesinden seçilen egzersizi bulun
             var exercise = ExercisesList.FirstOrDefault(x => x.Name == exerciseName);
 
-            if (exercise == null) // Seçilen egzersiz listede yoksa hata mesajı ver
+            if (exercise == null)
             {
                 Response.Write("<script>alert('Egzersiz bulunamadı.');</script>");
                 return;
@@ -136,11 +116,11 @@ namespace FitnessApp
         }
     }
 
-    // Yardımcı Sınıf
+    // Yardımcı Sınıf ile apiler alınır
     public class ExerciseApiHelper
     {
         private const string ApiBaseUrl = "https://api.api-ninjas.com/v1/exercises?muscle=";
-        private const string ApiKey = "dqOSOqDyEDvX/mjtOSnamw==9CWVoGJdRSiPYYDm";
+        private const string ApiKey = "";   // Güvenlik amacıyla SİLİNMİŞTİR.
         public List<Exercise> GetExercises(string muscleGroup)    // apiden json verisini çeker
         {
             string ApiUrl = ApiBaseUrl + muscleGroup; // Dinamik URL
@@ -164,3 +144,4 @@ namespace FitnessApp
         public string Instructions { get; set; } // "instructions" alanı
     }
 }
+

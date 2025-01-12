@@ -1,8 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="FitnessApp.Login" %>
 
-
-
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -90,9 +87,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
 
 <!--===============================================================================================-->
 	<script src="Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
